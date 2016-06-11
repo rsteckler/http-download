@@ -129,7 +129,7 @@ void HttpDownload::sendHeaders(HttpDownloadRequest &request, HttpDownloadHeader 
   itoa(byteRangeStart, itoaBuffer, 10);
   strcat(rangeValue, itoaBuffer);
   strcat(rangeValue, "-");
-  itoa(byteRangeStart + mBytesPerChunk, itoaBuffer, 10);
+  itoa(byteRangeStart + mBytesPerChunk - 1, itoaBuffer, 10);
   strcat(rangeValue, itoaBuffer);
   sendHeader("Range", rangeValue);
   if(request.hostname!=NULL) {
